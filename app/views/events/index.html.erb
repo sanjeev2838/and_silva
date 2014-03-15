@@ -5,21 +5,23 @@
 <%= link_to 'New Event', new_event_path, class: "btn btn-primary" %>
 <div id="post-btn-margin">
 </div>
+
 <% @events.each do |event| %>
 <div class="event">
-  <span id="event-index-title"><h3><%= link_to event.title, event %></h3></span>
+  <span id="event-title-underline"><span id="event-index-title"><%= link_to event.title, event %></span></span>
   <p>
-  <%= event.text %>
-  </p>
-  <div class="meta">
-    
-    <span id="gray-time">
-    <%= time_ago_in_words(event.created_at) + " ago" %>
-    </span>
-    <span class ="admin">
+
+  <%= event.text %><span class ="admin">
       | <%= link_to "Edit", edit_event_path(event) %> |
       <%= link_to "Delete", event, method: :delete, data: { confirm: "Are you sure?"} %>
     </span>
+  </p>
+  <div class="meta">
+    
+    <!--<span id="gray-time">
+    <%= time_ago_in_words(event.created_at) + " ago" %>
+    </span>-->
+    
   </div>
 </div>
 <% end %>

@@ -10,10 +10,10 @@
 
 	<p>
 		
-<h3><span class="glyphicon glyphicon-calendar"></span><%= @event.event_start.strftime("%B %e, %Y") %></h3>
+<h3>Date: <%= @event.event_start.strftime("%B %e, %Y") %></h3>
 	</p>
 
-	<p>Location and time, but not validated. Later, possibly JS prompts.</p>
+	<!--Location and time, but not validated. Later, possibly JS prompts.-->
 
 	<p>
 	  <%= @event.text %>

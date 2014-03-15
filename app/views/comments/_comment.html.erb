@@ -1,17 +1,22 @@
-<div class="comments">
+<div class="comment">
 <p>
-  <strong><%= link_to comment.user.full_name, profiles_show_path %></strong> 
+  <strong><%= link_to comment.user.full_name, profiles_show_path %></strong><span id="gray-time"> <%= time_ago_in_words(comment.created_at) + " ago" %><span class ="admin">
+  <span class="float-x">
+	  <%= link_to 'x', [comment.event, comment],
+	               method: :delete,
+	               data: { confirm: 'Are you sure?' } %>	
+		</span>
+		</span>
+	  </span> 
 </p>
+
 
 <p>  
   <%= comment.body %>
+  
 </p>
+	  
+	</div>
 
-<p>
-  <%= link_to 'Destroy Comment', [comment.event, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
-</div>
 
 
