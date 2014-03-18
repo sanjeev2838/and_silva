@@ -16,9 +16,15 @@
       <%= link_to "Delete", event, method: :delete, data: { confirm: "Are you sure?"} %>
     </span>
   </p>
+
+  <!-- <span class="gray-text">
+      <%= event.time_begin.strftime ("%I:%M %p") %>
+    </span> -->
+
+
   <div class="meta">
     
-    <!--<span id="gray-time">
+    <!--<span class="text">
     <%= time_ago_in_words(event.created_at) + " ago" %>
     </span>-->
     

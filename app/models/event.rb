@@ -6,5 +6,7 @@
                     length: { minimum: 5 }
   validates :text, presence: true,
   								 length: { minimum: 2 }
+ 	validates :event_start, presence: true,
+ 										length: {minimum: 10}
   
 end

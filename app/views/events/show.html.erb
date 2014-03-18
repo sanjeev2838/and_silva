@@ -10,10 +10,13 @@
 
 	<p>
 		
-<h3>Date: <%= @event.event_start.strftime("%B %e, %Y") %></h3>
-	</p>
+<h3><%= @event.event_start.strftime("%B %e, %Y") %></h3>
+<%= @event.time_begin.strftime ("%I:%M %p") %>
+<h3><%= @event.location %></h3>
 
+		
 	<!--Location and time, but not validated. Later, possibly JS prompts.-->
+
 
 	<p>
 	  <%= @event.text %>

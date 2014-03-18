@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20140307143842) do
 
   create_table "events", force: true do |t|
     t.string   "title"
+    t.datetime "time_begin"
+    t.string   "location"
     t.date     "event_start"
     t.text     "text"
-    t.integer  "user_id"
-    t.text     "user"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
