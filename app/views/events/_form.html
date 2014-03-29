@@ -28,15 +28,19 @@
 
   <p>
     <%= check_box_tag(:time_begin) %> 
-   <%= f.label :time_begin %><br/> 
+   <%= f.label :time %><br/> 
     <%= f.time_select :time_begin, :ampm => true %>
   </p>
 
   <p>
     <%= check_box_tag(:location) %>
     <%= f.label :location %><br/>
-    <%= f.text_field :location %> <span class="gray-text"><em>Location, address</em></span><!--later can make these placeholders and jscript. Once scoped to IE versions.-->
+    <%= f.text_field :location %> </span></p>
+    <%= check_box_tag(:location) %>
+    <%= f.label :address %>
+    <p><%= f.text_field :location %>  <!--later can make these placeholders and jscript. Once scoped to IE versions.-->
   </p>
+  
   
  <div class="form-actions">
   <p>

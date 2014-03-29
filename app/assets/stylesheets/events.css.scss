@@ -3,20 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .event {
-	padding-left: 10px;
-	padding-bottom: 12px;
-	padding-right: 10px;
-	padding-top: 10px;
-	margin-left: 20px;
-	margin-bottom: 12px;
-	background: #FAFAFA;
-	border-left: 3px solid #F0F0F0;
-	border-bottom: 1px solid #EDEDED;
-	border-right: 1px dotted #EDEDED;
-	border-bottom-right-radius: 5px;
-	border-top-right-radius: 5px;
-	border-top-left-radius: 6px;
-	border-bottom-left-radius: 5px;
+	
 }
 
 .event-present {
@@ -59,11 +46,7 @@
 }
 
 .event:hover {
-	background:#ebebeb;
-	border-left: 3px solid #E5E5E5;
-	border-bottom: 1px dotted #EBEBEB;
-	padding-left: 10px;
-	margin-left: 20px;
+
 }
 
 .event:hover a {
