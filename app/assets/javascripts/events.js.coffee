@@ -5,3 +5,36 @@
 jQuery ->
   $('#event_event_start').datepicker
   	dateFormat: 'yy-mm-dd'
+
+$(document).ready ->
+  $("#time_begin").change ->
+    $(this).next().toggleClass('grey')
+    if $(this).is(":checked")
+      $("#event_time_begin_4i").removeAttr "disabled"
+      $("#event_time_begin_5i").removeAttr "disabled"
+      $("#event_time_begin_4i option:eq(20)").prop('selected', true)
+      $("#event_time_begin_5i option:eq(1)").prop('selected', true)
+    else
+      $("#event_time_begin_4i").attr "disabled", "disabled"
+      $("#event_time_begin_5i").attr "disabled", "disabled"
+      $("#event_time_begin_4i option:eq(0)").prop('selected', true)
+      $("#event_time_begin_5i option:eq(0)").prop('selected', true)
+    return
+
+  $("#location").change ->
+    $(this).next().toggleClass('grey')
+    if $(this).is(":checked")
+      $("#event_location").removeAttr("disabled").val ""
+    else
+      $("#event_location").attr("disabled", "disabled").val ""
+    return
+
+  $("#address").change ->
+    $(this).next().toggleClass('grey')
+    if $(this).is(":checked")
+      $("#event_address").removeAttr("disabled").val ""
+    else
+      $("#event_address").attr("disabled", "disabled").val ""
+    return
+
+  return
