@@ -28,16 +28,16 @@
 
   <p>
     <%= check_box_tag(:time_begin) %> 
-   <%= f.label :time %><br/> 
-    <%= f.time_select :time_begin, :ampm => true, include_blank: true, :disabled => true %>
+   <%= f.label :time, :class => 'grey' %><br/>
+    <%= f.time_select :time_begin, :ampm => true, include_blank: true, :disabled => true, :default => {:hour => '19', :minute => '00'} %>
   </p>
 
   <p>
     <%= check_box_tag(:location) %>
-    <%= f.label :location  %><br/>
+    <%= f.label :location , :class =>'grey'  %><br/>
     <%= f.text_field :location, :disabled => true %> </span></p>
     <%= check_box_tag(:address) %>
-    <%= f.label :address %>
+    <%= f.label :address, :class =>'grey' %>
     <p><%= f.text_field :address, :disabled => true%>  <!--later can make these placeholders and jscript. Once scoped to IE versions.-->
   </p>
   
@@ -48,37 +48,3 @@
   </p>
   </div>
 <% end %>
-
-<script>
- $(document).ready(function(){
-   $('#time_begin').change(function() {
-        if( $('#time_begin').is(':checked') ){
-           $('#event_time_begin_4i').removeAttr('disabled');
-           $('#event_time_begin_5i').removeAttr('disabled');
-        }
-        else
-        {
-          $('#event_time_begin_4i').attr('disabled','disabled');
-           $('#event_time_begin_5i').attr('disabled','disabled');
-        }
-    });
-   $('#location').change(function() {
-        if( $(this).is(':checked') ){
-          $('#event_location').removeAttr('disabled').val("");
-        }
-       else
-       {
-         $('#event_location').attr('disabled','disabled').val("");
-       }
-    });
-
-    $('#address').change(function() {
-        if( $(this).is(':checked') ){
-          $('#event_address').removeAttr('disabled').val("");
-        }
-        else {
-          $('#event_address').attr('disabled','disabled').val("");
-        }
-    });
- });
-</script>
