@@ -29,7 +29,10 @@
   <p>
     <%= check_box_tag(:time_begin) %> 
    <%= f.label :time, :class => 'grey' %><br/>
+   <div id="div_time" style="display:inline-block; position:relative;">
     <%= f.time_select :time_begin, :ampm => true, include_blank: true, :disabled => true, :default => {:hour => '19', :minute => '00'} %>
+    <div style="position:absolute; left:0; right:0; top:0; bottom:0;"></div>
+   </div>
   </p>
 
   <p>
@@ -77,6 +80,18 @@
                $('#location').prop('checked', true)
            }
        });
+
+       $("#div_time  div").on("click",function(){
+//           alert("hello");
+           if  ( ! $('#time_begin').is(":checked")) {
+               $('#time_begin').next().toggleClass('grey')
+               $("#div_time  div").hide().parent().find('select').each(function( index ) { $(this).prop("disabled", false).focus() });
+               $('#time_begin').prop('checked', true)
+               $("#event_time_begin_4i option:eq(20)").prop('selected', true)
+               $("#event_time_begin_5i option:eq(1)").prop('selected', true)
+           }
+       });
+
        $("#div_address  div").on("click",function(){
 //           alert("hello");
            if( ! $('#address').is(":checked")){

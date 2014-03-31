@@ -14,11 +14,13 @@ $(document).ready ->
       $("#event_time_begin_5i").removeAttr "disabled"
       $("#event_time_begin_4i option:eq(20)").prop('selected', true)
       $("#event_time_begin_5i option:eq(1)").prop('selected', true)
+      $("#div_time div").hide()
     else
       $("#event_time_begin_4i").attr "disabled", "disabled"
       $("#event_time_begin_5i").attr "disabled", "disabled"
       $("#event_time_begin_4i option:eq(0)").prop('selected', true)
       $("#event_time_begin_5i option:eq(0)").prop('selected', true)
+      $("#div_time div").show()
     return
 
   $("#location").change ->
