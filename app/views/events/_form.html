@@ -63,7 +63,18 @@
 <script>
    $(document).ready(function(){
 
-
+       if ($('#event_location').val != ''){
+           $('#location').next().removeClass('grey')
+           $('#location').prop('checked', true)
+       }
+       if ($('#event_address').val != ''){
+           $('#address').next().removeClass('grey')
+           $('#address').prop('checked', true)
+       }
+       if ($("#event_time_begin_4i option:selected").val() != ''){
+           $('#time_begin').next().removeClass('grey')
+           $('#time_begin').prop('checked', true)
+       }
 //       $("#div_location  div").on("click", function (evt) {
 //           alert("asdf");
 //           $(this).hide().prev("input[disabled]").prop("disabled", false).focus();
