@@ -63,30 +63,28 @@
 <script>
    $(document).ready(function(){
 
-       if ($('#event_location').val != ''){
+       if ($('#event_location').val().length > 0){
+           console.log($('#event_location').val());
            $('#location').next().removeClass('grey')
+           $(this).prop("disabled", false).focus();
            $('#location').prop('checked', true)
        }
-       if ($('#event_address').val != ''){
-           $('#address').next().removeClass('grey')
-           $('#address').prop('checked', true)
+       if ($('#event_address').val().length > 0){
+           console.log($('#event_location').val());
+           $('#address').next().removeClass('grey');
+           $(this).prop("disabled", false).focus();
+           $('#address').prop('checked', true);
        }
-       if ($("#event_time_begin_4i option:selected").val() != ''){
+       if ($("#event_time_begin_4i option:selected").val().length > 0){
            $('#time_begin').next().removeClass('grey')
            $('#time_begin').prop('checked', true)
        }
-//       $("#div_location  div").on("click", function (evt) {
-//           alert("asdf");
-//           $(this).hide().prev("input[disabled]").prop("disabled", false).focus();
-//       });
+
 
        $("#div_location  div").on("click",function(){
 //           alert("hello");
            if  ( ! $('#location').is(":checked")) {
                $('#location').next().toggleClass('grey')
-//               $(this).find('input').prop('disabled',false);
-//               $(this).closest('input').attr('disabled', 'disabled');
-//               $(this).closest('input').removeAttr('disabled');
                $(this).hide().prev("input[disabled]").prop("disabled", false).focus();
                $('#location').prop('checked', true)
            }
@@ -107,9 +105,6 @@
 //           alert("hello");
            if( ! $('#address').is(":checked")){
                $('#address').next().toggleClass('grey')
-//               $(this).find('input').prop('disabled',false);
-//               $(this).find('input').attr('disabled', 'disabled');
-//               $(this).find('input').removeAttr('disabled');
                $(this).hide().prev("input[disabled]").prop("disabled", false).focus();
                $('#address').prop('checked', true)
            }
