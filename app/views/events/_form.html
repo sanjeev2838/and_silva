@@ -83,11 +83,11 @@
        $("#location").change(function() {
            $(this).next().toggleClass('grey');
            if ($(this).is(":checked")) {
-               $("#event_location").removeAttr("disabled").val("");
+//               $("#event_location").removeAttr("disabled").val("");
                $("#event_location").removeAttr("disabled").val($("#event_location").attr("data"));
                $("#div_location  div").hide();
            } else {
-               $("#event_location").attr("disabled", "disabled").val("");
+//               $("#event_location").attr("disabled", "disabled").val("");
                $("#event_location").attr("disabled", "disabled").attr("data",$("#event_location").val()).val("");
                $("#div_location  div").show();
            }
