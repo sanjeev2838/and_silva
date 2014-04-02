@@ -63,6 +63,47 @@
 <script>
    $(document).ready(function(){
 
+//------------------------------------------------------
+       $("#time_begin").change(function() {
+           $(this).next().toggleClass('grey');
+           if ($(this).is(":checked")) {
+               $("#event_time_begin_4i").removeAttr("disabled");
+               $("#event_time_begin_5i").removeAttr("disabled");
+               $("#event_time_begin_4i option:eq(20)").prop('selected', true);
+               $("#event_time_begin_5i option:eq(1)").prop('selected', true);
+               $("#div_time div").hide();
+           } else {
+               $("#event_time_begin_4i").attr("disabled", "disabled");
+               $("#event_time_begin_5i").attr("disabled", "disabled");
+               $("#event_time_begin_4i option:eq(0)").prop('selected', true);
+               $("#event_time_begin_5i option:eq(0)").prop('selected', true);
+               $("#div_time div").show();
+           }
+       });
+       $("#location").change(function() {
+           $(this).next().toggleClass('grey');
+           if ($(this).is(":checked")) {
+               $("#event_location").removeAttr("disabled").val("");
+               $("#event_location").removeAttr("disabled").val($("#event_location").attr("data"));
+               $("#div_location  div").hide();
+           } else {
+               $("#event_location").attr("disabled", "disabled").val("");
+               $("#event_location").attr("disabled", "disabled").attr("data",$("#event_location").val()).val("");
+               $("#div_location  div").show();
+           }
+       });
+       $("#address").change(function() {
+           $(this).next().toggleClass('grey');
+           if ($(this).is(":checked")) {
+               $("#event_address").removeAttr("disabled").val($("#event_address").attr("data"));
+               $("#div_address div").hide();
+           } else {
+               $("#event_address").attr("disabled", "disabled").attr("data",$("#event_address").val()).val("");
+               $("#div_address div").show();
+           }
+       });
+//-----------------------------------------------------------
+
        if ($('#event_location').val().length > 0){
            console.log($('#event_location').val());
            $('#location').next().removeClass('grey')
@@ -92,6 +133,8 @@
                $('#location').next().toggleClass('grey')
                $(this).hide().prev("input[disabled]").prop("disabled", false).focus();
                $('#location').prop('checked', true)
+               $("#event_location").val($("#event_address").attr("data"));
+
            }
        });
 
@@ -112,6 +155,7 @@
                $('#address').next().toggleClass('grey')
                $(this).hide().prev("input[disabled]").prop("disabled", false).focus();
                $('#address').prop('checked', true)
+               $("#event_address").val($("#event_address").attr("data"));
            }
        });
    });
