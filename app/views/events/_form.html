@@ -66,18 +66,23 @@
        if ($('#event_location').val().length > 0){
            console.log($('#event_location').val());
            $('#location').next().removeClass('grey')
-           $(this).prop("disabled", false).focus();
+           $('#event_location').prop("disabled", false).focus();
+           $("#div_location  div").hide();
            $('#location').prop('checked', true)
        }
        if ($('#event_address').val().length > 0){
            console.log($('#event_location').val());
            $('#address').next().removeClass('grey');
-           $(this).prop("disabled", false).focus();
+           $('#event_address').prop("disabled", false).focus();
+           $("#div_address div").hide();
            $('#address').prop('checked', true);
        }
        if ($("#event_time_begin_4i option:selected").val().length > 0){
            $('#time_begin').next().removeClass('grey')
            $('#time_begin').prop('checked', true)
+           $("#event_time_begin_4i").prop('disabled', false)
+           $("#event_time_begin_5i").prop('disabled', false)
+           $("#div_time  div").hide();
        }
 
 
