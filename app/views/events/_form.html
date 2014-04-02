@@ -67,14 +67,21 @@
        $("#time_begin").change(function() {
            $(this).next().toggleClass('grey');
            if ($(this).is(":checked")) {
+
                $("#event_time_begin_4i").removeAttr("disabled");
+               $("#event_time_begin_4i").val($("#event_time_begin_4i").attr("data")).attr('selected', 'selected');
                $("#event_time_begin_5i").removeAttr("disabled");
-               $("#event_time_begin_4i option:eq(20)").prop('selected', true);
-               $("#event_time_begin_5i option:eq(1)").prop('selected', true);
+               $("#event_time_begin_5i").val($("#event_time_begin_5i").attr("data")).attr('selected', 'selected');
+
+//               $("#event_time_begin_4i option:eq(20)").prop('selected', true);
+//               $("#event_time_begin_5i option:eq(1)").prop('selected', true);
                $("#div_time div").hide();
            } else {
                $("#event_time_begin_4i").attr("disabled", "disabled");
                $("#event_time_begin_5i").attr("disabled", "disabled");
+               $("#event_time_begin_4i").attr("data",$("#event_time_begin_4i").val()).val("");
+               $("#event_time_begin_5i").attr("data",$("#event_time_begin_5i").val()).val("");
+
                $("#event_time_begin_4i option:eq(0)").prop('selected', true);
                $("#event_time_begin_5i option:eq(0)").prop('selected', true);
                $("#div_time div").show();
@@ -146,6 +153,7 @@
                $('#time_begin').prop('checked', true)
                $("#event_time_begin_4i option:eq(20)").prop('selected', true)
                $("#event_time_begin_5i option:eq(1)").prop('selected', true)
+               $("#event_time_begin_4i").val($("#event_time_begin_4i").attr("data"));
            }
        });
 
